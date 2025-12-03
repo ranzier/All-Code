@@ -7,6 +7,7 @@ public class MyLinkedList {
         int val;
         ListNode next, prev;
 
+        public ListNode() {}
         public ListNode(int val) {
             this.val = val;
         }
