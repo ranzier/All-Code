@@ -1,0 +1,30 @@
+package suixianglu.tree;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class L94 {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = null;
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
+        List<Integer> list = inorderTraversal(root);
+        System.out.println(list);
+    }
+
+    // 中序遍历
+    public static List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        inorder(root, list);
+        return list;
+    }
+
+    public static void inorder(TreeNode root, List<Integer> list) {
+        if (root == null)
+            return;
+        inorder(root.left, list);
+        list.add(root.val);
+        inorder(root.right, list);
+    }
+}
